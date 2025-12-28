@@ -1,74 +1,9 @@
 "use client"
 import { useState } from 'react';
+import { blogs } from './blogs-data';
 
 export default function Home() {
-  const blogs = [
-    {
-      title: "Understanding Next.js App Router",
-      author: "John Doe",
-      date: "2024-03-15",
-      description: "Next.js App Router introduces a modern way to build React applications..."
-      // ... keep full description
-    },
-
-     {
-      title: "Understanding Next.js App Router",
-      author: "John Doe",
-      date: "2024-03-15",
-      description: "Next.js App Router introduces a modern way to build React applications..."
-      // ... keep full description
-    },
-
-     {
-      title: "Understanding Next.js App Router",
-      author: "John Doe",
-      date: "2024-03-15",
-      description: "Next.js App Router introduces a modern way to build React applications..."
-      // ... keep full description
-    },
-
-     {
-      title: "Understanding Next.js App Router",
-      author: "John Doe",
-      date: "2024-03-15",
-      description: "Next.js App Router introduces a modern way to build React applications..."
-      // ... keep full description
-    },
-
-     {
-      title: "Understanding Next.js App Router",
-      author: "John Doe",
-      date: "2024-03-15",
-      description: "Next.js App Router introduces a modern way to build React applications..."
-      // ... keep full description
-    },
-
-     {
-      title: "Understanding Next.js App Router",
-      author: "John Doe",
-      date: "2024-03-15",
-      description: "Next.js App Router introduces a modern way to build React applications..."
-      // ... keep full description
-    },
-
-     {
-      title: "Understanding Next.js App Router",
-      author: "John Doe",
-      date: "2024-03-15",
-      description: "Next.js App Router introduces a modern way to build React applications..."
-      // ... keep full description
-    },
-
-     {
-      title: "Understanding Next.js App Router",
-      author: "John Doe",
-      date: "2024-03-15",
-      description: "Next.js App Router introduces a modern way to build React applications..."
-      // ... keep full description
-    },
-    // Add 10+ blog objects with date property
-
-  ];
+  
 
   const BLOGS_PER_PAGE = 5;
   const [currentPage, setCurrentPage] = useState(1);
