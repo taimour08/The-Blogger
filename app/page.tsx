@@ -1,52 +1,32 @@
-// app/page.tsx
-"use client";
+import { fetchBlogs } from "../lib/fetchBlogs";
 
-import Link from 'next/link';
-import './globals.css';
 
-export default function HomePage() {
+type Blog = {
+  id: number
+  title: string
+  author: string
+  date: string
+  description: string
+}
+
+export default async function HomePage() {
+  const blogs = await fetchBlogs();
+
   return (
-    <div className="home-container">
-      <div className="hero-section">
-        <h1 className="hero-title">Welcome to DevBlog</h1>
-        <p className="hero-subtitle">
-          Explore insightful articles about web development, React, Next.js, and modern technologies.
-          Join our community of developers and share your knowledge.
-        </p>
-        
-        <div className="cta-buttons">
-          <Link href="/blogs" className="primary-button">
-            Explore Blogs
-          </Link>
-          <Link href="/createBlog" className="secondary-button">
-            Write Your Own
-          </Link>
-        </div>
-      </div>
+    <main>
+      <h1>Blo Posts</h1>
 
-      <div className="features-section">
-        <div className="feature-card">
-          <h3>📚 Learn</h3>
-          <p>Detailed tutorials and guides on modern web technologies</p>
-        </div>
-        <div className="feature-card">
-          <h3>💡 Share</h3>
-          <p>Contribute your knowledge and help others grow</p>
-        </div>
-        <div className="feature-card">
-          <h3>🚀 Build</h3>
-          <p>Practical projects you can implement immediately</p>
-        </div>
-      </div>
-
-      <div className="recent-preview">
-        <h2>Recently Published</h2>
-        <div className="preview-card">
-          <h3>Understanding Next.js App Router</h3>
-          <p>A comprehensive guide to the new App Router in Next.js 14...</p>
-          <Link href="/blogs/1">Read More →</Link>
-        </div>
-      </div>
-    </div>
+      {blogs.map((blog: Blog) => (
+        <article key={blog.id}>
+          <h2>{blog.title}</h2>
+          <p>
+            By {blog.author} • {blog.date}
+          </p>
+          <p>{blog.description}</p>
+        </article>
+      ))}
+    </main>
   );
 }
+
+
