@@ -18,9 +18,6 @@ export default function HomePage() {
           <Link href="/blogs" className="primary-button">
             Explore Blogs
           </Link>
-          <Link href="/createBlog" className="secondary-button">
-            Write Your Own
-          </Link>
         </div>
       </div>
 
