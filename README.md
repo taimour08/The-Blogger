@@ -23,3 +23,28 @@
 ```bash
 git clone <repository-url>
 cd <project-folder>
+
+2. **Install dependencies:**
+
+```bash
+npm install
+
+
+3. **Environment Variables:**
+
+Create a .env.local file in the root of the project with the following:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+
+Replace with your Supabase project URL and anon key.
+
+4. **Run locally:**
+
+```bash
+npm run dev
+
+
+Open http://localhost:3000 in your browser.
