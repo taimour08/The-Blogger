@@ -45,7 +45,7 @@ useEffect(() => {
   </li>
 
   {user ? (
-    <li className="user-email">{user.email}</li>
+    <li className="user-email"> User: {user.email}</li>
   ) : (
     <li>
       <a href="/login">Login</a>

@@ -1,5 +1,6 @@
-const SUPABASE_URL = "https://fdcbfpluwrpocesaxizq.supabase.co/graphql/v1";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZkY2JmcGx1d3Jwb2Nlc2F4aXpxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY1NzIwMDQsImV4cCI6MjA4MjE0ODAwNH0.16HJQmWAYXrnCThY9n_qQSzF48hBwSFQjSil0mj1uOM";
+const SUPABASE_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/graphql/v1`;
+
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 export async function fetchBlogs() {
   const res = await fetch(SUPABASE_URL, {
