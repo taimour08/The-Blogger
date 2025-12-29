@@ -104,7 +104,7 @@ Make sure the environment variables are set (see Local Setup).
 
 ## Notes & Recommendations
 
-- **RLS (Row Level Security):** RLS is enabled on the `blogs` table. Ensure you have a public `SELECT` policy (or appropriate policies) if you want to allow fetching blogs without authentication.
+- **RLS (Row Level Security):** RLS is enabled on the `blogs` table. Ensure you have a public `SELECT` policy (or appropriate policies) if you want to allow fetching blogs without authentication. Only authenticated users can insert blog data; ensure an RLS INSERT policy is set for the authenticated role.
 - **Environment variables:** Must be correctly set. Restart the dev server after updating `.env.local` so the Supabase client picks up the values.
 - **Security / Production:**
   - Use secure storage for environment variables in production (e.g., cloud secrets manager).
